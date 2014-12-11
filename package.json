@@ -1,13 +1,12 @@
 {
-  "name": "zetta-tessel",
+  "name": "zetta-arduino-mqtt",
+  "private": true,
   "version": "0.0.0",
-  "description": "",
   "main": "ambient_attx4.js",
   "dependencies": {
     "mqtt": "~0.3.13",
     "zetta": "~0.18.0",
     "zetta-device": "~0.9.0",
-    "zetta-http-device": "~0.3.0",
     "zetta-scout": "~0.5.0"
   },
   "devDependencies": {},
@@ -15,6 +14,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Kevin Swiber <kswiber@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinswiber/zetta-arduino-mqtt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevinswiber/zetta-arduino-mqtt/issues"
+  },
+  "homepage": "https://github.com/kevinswiber/zetta-arduino-mqtt"
 }
