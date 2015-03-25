@@ -18,12 +18,6 @@ LED.prototype.init = function(config) {
     .when('on', { allow: ['turn-off'] })
     .map('turn-on', this.tryTurnOn)
     .map('turn-off', this.tryTurnOff)
-    .map('turn-on-ack', this.turnOnAck)
-    .map('turn-off-ack', this.turnOffAck);
-    //.when('waiting-turn-on', { allow: ['turn-on-ack'] })
-    //.when('waiting-turn-off', { allow: ['turn-off-ack'] })
-    //.map('turn-on', this.tryTurnOn)
-    //.map('turn-off', this.tryTurnOff)
 };
 
 LED.prototype.tryTurnOn = function(cb) {
@@ -54,8 +48,8 @@ LED.prototype.turnOffAck = function(cb) {
 
 LED.prototype.ack = function(transition, message) {
   if (transition === 'turn-on') {
-    //this.call('turn-on-ack');
+    // acknowledge transition happened
   } else if (transition === 'turn-off') {
-    //this.call('turn-off-ack');
+    // acknowledge transition happened
   }
 };
