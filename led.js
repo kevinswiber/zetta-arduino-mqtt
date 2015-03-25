@@ -16,33 +16,19 @@ LED.prototype.init = function(config) {
     .state('off')
     .when('off', { allow: ['turn-on'] })
     .when('on', { allow: ['turn-off'] })
-    .map('turn-on', this.tryTurnOn)
-    .map('turn-off', this.tryTurnOff)
+    .map('turn-on', this.turnOn)
+    .map('turn-off', this.turnOff)
 };
 
-LED.prototype.tryTurnOn = function(cb) {
+LED.prototype.turnOn = function(cb) {
   this._client.publish('led/' + this._name + '/transition/turn-on');
   this.state = 'on';
   cb();
 };
 
-LED.prototype.tryTurnOff = function(cb) {
+LED.prototype.turnOff = function(cb) {
   this._client.publish('led/' + this._name + '/transition/turn-off');
   this.state = 'off';
-  cb();
-};
-
-LED.prototype.turnOnAck = function(cb) {
-  if (this.state !== 'on') {
-    this.state = 'on';
-  }
-  cb();
-};
-
-LED.prototype.turnOffAck = function(cb) {
-  if (this.state !== 'off') {
-    this.state = 'off';
-  }
   cb();
 };
 
