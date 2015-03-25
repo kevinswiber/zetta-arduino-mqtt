@@ -12,4 +12,5 @@ var options = {
 zetta()
   .name('arduino-mqtt')
   .use(MqttScout, options)
-  .listen(1337);
+  .link('https://zetta-cloud-2.herokuapp.com')
+  .listen(process.env.PORT || 1337);
